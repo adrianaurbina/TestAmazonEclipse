@@ -39,8 +39,8 @@ public class TestAmazon1 {
 	    driver.findElement(By.xpath("//div[@id='search']/div/div/div/span/div/div[2]/div/div/span/div/div/div/div[2]/div/div/div/h2/a/span")).click();
 	    
 	    String currentUrl = driver.getCurrentUrl();
-	  
-	    String expectedUrl = "https://www.amazon.com/Apple-iPhone-15-Pro-Max/dp/B0CMZD7VCV/ref=sr_1_1?crid=2MLL6GB07N8XX&dib=eyJ2IjoiMSJ9.sd6YOd3xvFlAAGfN75liJ_OyJCTCrRXAzdif7WPpsJ5zaeLum1zJ7Hr3go5gRPhIPdI7xOKg1vKyYxdtqOl7QUZ9Z_iG5gdOXZ_Wz0a2yJp55F227PibWYSax2SR3Kwzc2cl7e0la0g0WVaay78bImS9TLFkWRmTzRU6UpgEmCTAlzEYxcVwE2qblDRksOitXEUCzMDoXH7cL0MKmb2mGn5Ca3xa2X3T2XYvRuV0rzA.tv8p5TK0TgvhJIRaK7hrIy8GTyKwXMZfBVYwDsBZDxs&dib_tag=se&keywords=Iphone%2B15%2Bpro%2Bmax&qid=1713974232&sprefix=%2Caps%2C178&sr=8-1&th=1";
+	    
+	    String expectedUrl = "https://www.amazon.com/Apple-iPhone-15-Pro-Max/dp/B0CMZD7VCV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.sd6YOd3xvFlAAGfN75liJ_OyJCTCrRXAzdif7WPpsJ5zaeLum1zJ7Hr3go5gRPhI62pD4apPK5Zt0I1D8DPk0pwZhlG0wAsM9bKtwCUW5RWyce_a2HiM75ng1vwqlc_lc2cl7e0la0g0WVaay78bImS9TLFkWRmTzRU6UpgEmCTAlzEYxcVwE2qblDRksOitXEUCzMDoXH7cL0MKmb2mGn5Ca3xa2X3T2XYvRuV0rzA.hP4rAJgQmV-VAnJ65hT3L0IANOGiP3qudhPvCuOkOSc&dib_tag=se&keywords=Iphone+15+pro+max&qid=1713975362&sr=8-1";
 	    
 	   Assert.assertEquals(expectedUrl, currentUrl);
 	    
