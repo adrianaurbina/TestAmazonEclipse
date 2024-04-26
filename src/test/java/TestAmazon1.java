@@ -30,19 +30,18 @@ public class TestAmazon1 {
 	@Test
 	  public void testAmazonPhone() throws Exception {
 		
-		
-	    driver.get("https://www.amazon.com");
+		String searchDescription = "Iphone 15 pro max";
+	    driver.get("https://www.amazon.com.mx");
 	    driver.findElement(By.id("twotabsearchtextbox")).click();
-	    driver.findElement(By.id("twotabsearchtextbox")).clear();
-	    driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Iphone 15 pro max");
+	    driver.findElement(By.id("twotabsearchtextbox")).sendKeys(searchDescription);
 	    driver.findElement(By.id("nav-search-bar-form")).submit();
-	    driver.findElement(By.xpath("//div[@id='search']/div/div/div/span/div/div[2]/div/div/span/div/div/div/div[2]/div/div/div/h2/a/span")).click();
 	    
-	    String currentUrl = driver.getCurrentUrl();
+	    WebElement firstResult = driver.findElement(By.xpath("//div[@class='s-main-slot s-result-list s-search-results sg-row']//div[@data-index='0']//a[@class='a-link-normal a-text-normal']"));
+	    firstResult.click();
 	    
-	    String expectedUrl = "https://www.amazon.com/Apple-iPhone-15-Pro-Max/dp/B0CMZD7VCV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.sd6YOd3xvFlAAGfN75liJ_OyJCTCrRXAzdif7WPpsJ5zaeLum1zJ7Hr3go5gRPhI62pD4apPK5Zt0I1D8DPk0pwZhlG0wAsM9bKtwCUW5RWyce_a2HiM75ng1vwqlc_lc2cl7e0la0g0WVaay78bImS9TLFkWRmTzRU6UpgEmCTAlzEYxcVwE2qblDRksOitXEUCzMDoXH7cL0MKmb2mGn5Ca3xa2X3T2XYvRuV0rzA.hP4rAJgQmV-VAnJ65hT3L0IANOGiP3qudhPvCuOkOSc&dib_tag=se&keywords=Iphone+15+pro+max&qid=1713975362&sr=8-1";
+	    boolean titleContainsName = driver.getTitle().toLowerCase().contains(searchDescription.toLowerCase());
 	    
-	   Assert.assertEquals(expectedUrl, currentUrl);
+	   Assert.assertTrue(titleContainsName);
 	    
 	    WebElement element = driver.findElement(By.xpath("//div[@id='corePrice_feature_div']/div/div/span/span[2]"));
 	    String price = element.getText();
